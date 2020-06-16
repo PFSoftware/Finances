@@ -23,12 +23,12 @@
         <ListView x:Name="LVCategorized" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Height="450" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Visible" AlternationCount="2" Margin="0,0,0,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=MajorCategory}">
+                    <GridViewColumn Width="350" DisplayMemberBinding="{Binding Path=MajorCategory}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="MajorCategory" Click="LVCategorizedColumnHeader_Click" Content="Major Category" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=MinorCategory}">
+                    <GridViewColumn Width="350" DisplayMemberBinding="{Binding Path=MinorCategory}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="MinorCategory" Click="LVCategorizedColumnHeader_Click" Content="Minor Category" />
                         </GridViewColumn.Header>

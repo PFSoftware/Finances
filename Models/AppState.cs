@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -58,6 +59,14 @@ namespace PFSoftware.Finances.Models
             AllAccounts = await DatabaseInteraction.LoadAccounts();
             AllAccountTypes = await DatabaseInteraction.LoadAccountTypes();
             AllCategories = await DatabaseInteraction.LoadCategories();
+            foreach (Account account in AllAccounts)
+                foreach (FinancialTransaction trans in account.AllTransactions)
+                    AllTransactions.Add(trans);
+
+            AllAccountTypes.Sort();
+            AllTransactions = AllTransactions.OrderByDescending(transaction => transaction.Date).ThenByDescending(transaction => transaction.ID).ToList();
+            LoadMonths();
+            LoadYears();
             Loaded = true;
         }
 

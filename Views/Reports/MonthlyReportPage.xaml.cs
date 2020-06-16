@@ -29,7 +29,7 @@ namespace PFSoftware.Finances.Views.Reports
 
         #endregion Data-Binding
 
-        #region Click methods
+        #region Click
 
         private void BtnViewCategorizedReport_Click(object sender, RoutedEventArgs e)
         {
@@ -68,7 +68,7 @@ namespace PFSoftware.Finances.Views.Reports
 
         private void LVMonths_SelectionChanged(object sender, SelectionChangedEventArgs e) => BtnViewCategorizedReport.IsEnabled = LVMonths.SelectedIndex >= 0;
 
-        #endregion Click methods
+        #endregion Click
 
         #region Page-Manipulation Methods
 
