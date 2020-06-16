@@ -7,54 +7,51 @@
       Loaded="ViewAccountPage_Loaded"
       Style="{StaticResource PageStyle}"
       Title="Finances - View Account">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0" Width="300" Margin="0,0,10,0">
-            <TextBlock x:Name="LblAccountName" Text="{Binding Path=Name}" TextWrapping="Wrap" FontSize="20" Margin="0,0,0,10" />
-            <TextBlock x:Name="LblType" Text="{Binding Path=Type}" FontSize="20" Margin="0,0,0,10" />
-            <TextBlock x:Name="LblBalance" Text="{Binding Path=BalanceToStringWithText}" FontSize="20" Margin="0,0,0,10" />
-        </StackPanel>
-        <ListView x:Name="LVTransactions" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Height="610" SelectionChanged="LVTransactions_SelectionChanged" AlternationCount="2" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Visible">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="LblAccountName" Grid.Column="0" Text="{Binding Path=Name}" TextWrapping="Wrap" FontSize="32" Margin="0,0,0,10" />
+            <TextBlock x:Name="LblType" Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Path=Type}" FontSize="32" Margin="0,0,0,10" />
+            <TextBlock x:Name="LblBalance" Grid.Column="2" HorizontalAlignment="Right" Text="{Binding Path=BalanceToStringWithText}" FontSize="32" Margin="0,0,0,10" />
+        </Grid>
+        <ListView x:Name="LVTransactions" Grid.Column="0" Grid.Row="1" Height="800" SelectionChanged="LVTransactions_SelectionChanged" AlternationCount="2" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0,0,0,10">
             <ListView.View>
                 <GridView ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=DateToString}">
+                    <GridViewColumn Width="165" DisplayMemberBinding="{Binding Path=DateToString}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Date" Click="LVTransactionsColumnHeader_Click" Content="Date" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=Payee}">
+                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=Payee}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Payee" Click="LVTransactionsColumnHeader_Click" Content="Payee" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=MajorCategory}">
+                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=MajorCategory}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="MajorCategory" Click="LVTransactionsColumnHeader_Click" Content="Major Category" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=MinorCategory}">
+                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=MinorCategory}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="MinorCategory" Click="LVTransactionsColumnHeader_Click" Content="Minor Category" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=Memo}">
+                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=Memo}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Memo" Click="LVTransactionsColumnHeader_Click" Content="Memo" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=OutflowToString}">
+                    <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=OutflowToString}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Outflow" Click="LVTransactionsColumnHeader_Click" Content="Outflow" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=InflowToString}">
+                    <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=InflowToString}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Inflow" Click="LVTransactionsColumnHeader_Click" Content="Inflow" />
                         </GridViewColumn.Header>
@@ -62,15 +59,17 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,10,0">
-            <Button x:Name="BtnNewTransaction" Content="_New Transaction" Click="BtnNewTransaction_Click" IsDefault="True" Margin="0,0,0,10" />
-            <Button x:Name="BtnNewTransfer" Content="_New Transfer" Click="BtnNewTransfer_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnModifyTransaction" Click="BtnModifyTransaction_Click" Content="_Modify Transaction" IsEnabled="False" Margin="0,0,0,10" />
-            <Button x:Name="BtnDeleteTransaction" Click="BtnDeleteTransaction_Click" Content="_Delete Transaction" IsEnabled="False" Margin="0,0,0,10" />
-            <Button x:Name="BtnSearchTransactions" Content="_Search Transactions" Click="BtnSearchTransactions_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnRenameAccount" Content="_Rename Account" Click="BtnRenameAccount_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnDeleteAccount" Content="_Delete Account" Click="BtnDeleteAccount_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnBack" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="BtnNewTransaction" Width="410" Content="_New Transaction" Click="BtnNewTransaction_Click" IsDefault="True" Margin="0,0,10,0" />
+            <Button x:Name="BtnNewTransfer" Width="410" Content="_New Transfer" Click="BtnNewTransfer_Click" Margin="0,0,10,1" />
+            <Button x:Name="BtnModifyTransaction" Width="410" Click="BtnModifyTransaction_Click" Content="_Modify Transaction" IsEnabled="False" Margin="0,0,10,0" />
+            <Button x:Name="BtnDeleteTransaction" Width="410" Click="BtnDeleteTransaction_Click" Content="_Delete Transaction" IsEnabled="False" />
         </StackPanel>
-    </Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="BtnSearchTransactions" Width="410" Content="_Search Transactions" Click="BtnSearchTransactions_Click" Margin="0,0,10,0" />
+            <Button x:Name="BtnRenameAccount" Width="410" Content="_Rename Account" Click="BtnRenameAccount_Click" Margin="0,0,10,0" />
+            <Button x:Name="BtnDeleteAccount" Width="410" Content="_Delete Account" Click="BtnDeleteAccount_Click" Margin="0,0,10,0" />
+            <Button x:Name="BtnBack" Width="410" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
+        </StackPanel>
+    </StackPanel>
 </Page>
