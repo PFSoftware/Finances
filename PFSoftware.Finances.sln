@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSoftware.Finances", "PFSoftware.Finances.csproj", "{1BB90754-549F-4959-B99F-59ABF7E396D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSoftware.Extensions", "..\Extensions\PFSoftware.Extensions.csproj", "{83E5053C-C22D-42FB-AFC7-233727CA60E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BB90754-549F-4959-B99F-59ABF7E396D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB90754-549F-4959-B99F-59ABF7E396D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB90754-549F-4959-B99F-59ABF7E396D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB90754-549F-4959-B99F-59ABF7E396D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E5053C-C22D-42FB-AFC7-233727CA60E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E5053C-C22D-42FB-AFC7-233727CA60E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E5053C-C22D-42FB-AFC7-233727CA60E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E5053C-C22D-42FB-AFC7-233727CA60E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {068C0E61-208A-4D43-9F43-8D51DA5BD213}
+	EndGlobalSection
+EndGlobal
