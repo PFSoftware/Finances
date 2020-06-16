@@ -28,7 +28,8 @@ namespace PFSoftware.Finances.Views.Credit
             if (AppState.YesNoNotification(
                 "Are you sure you want to delete this credit score? This action cannot be undone.", "Personal Tracker"))
             {
-                await AppState.DeleteCreditScore(_selectedScore);
+                if (await AppState.DeleteCreditScore(_selectedScore))
+                    _allScores.Remove(_selectedScore);
                 RefreshItemsSource();
             }
         }
@@ -61,8 +62,13 @@ namespace PFSoftware.Finances.Views.Credit
             RefreshItemsSource();
         }
 
-        private void LVScores_SelectionChanged(object sender, SelectionChangedEventArgs e) => _selectedScore =
-            LVScores.SelectedIndex >= 0 ? (CreditScore)LVScores.SelectedItem : new CreditScore();
+        private void LVScores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            bool enabled = LVScores.SelectedIndex >= 0;
+            _selectedScore = enabled ? (CreditScore)LVScores.SelectedItem : new CreditScore();
+            BtnDeleteCreditScore.IsEnabled = enabled;
+            BtnModifyCreditScore.IsEnabled = enabled;
+        }
 
         #endregion Page-Manipulation Methods
     }

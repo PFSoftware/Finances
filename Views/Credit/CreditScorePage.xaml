@@ -20,12 +20,12 @@
         <ListView x:Name="LVScores" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Height="450" SelectionChanged="LVScores_SelectionChanged" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Visible" AlternationCount="2" Margin="0,0,0,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=DateToString}">
+                    <GridViewColumn Width="165" DisplayMemberBinding="{Binding Path=DateToString}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Date" Click="LVScoresColumnHeader_Click" Content="Date" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="250" DisplayMemberBinding="{Binding Path=Source}">
+                    <GridViewColumn Width="350" DisplayMemberBinding="{Binding Path=Source}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Source" Click="LVScoresColumnHeader_Click" Content="Source" />
                         </GridViewColumn.Header>
@@ -35,12 +35,12 @@
                             <GridViewColumnHeader Tag="Score" Click="LVScoresColumnHeader_Click" Content="Score" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=ProviderToString}">
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=ProviderToString}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="Provider" Click="LVScoresColumnHeader_Click" Content="Provider" />
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=FICOToString}">
+                    <GridViewColumn Width="165" DisplayMemberBinding="{Binding Path=FICOToString}">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="FICO" Click="LVScoresColumnHeader_Click" Content="FICO?" />
                         </GridViewColumn.Header>
@@ -48,9 +48,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BtnAddCreditScore" Grid.Column="0" Grid.Row="1" Width="403" Content="_Add Credit Score" Click="BtnAddCreditScore_Click" IsDefault="True" Margin="0,0,10,10" />
-        <Button x:Name="BtnDeleteCreditScore" Grid.Column="1" Grid.Row="1" Width="403" Content="_Delete Credit Score" Click="BtnDeleteCreditScore_Click" IsEnabled="False" Margin="0,0,0,10" />
-        <Button x:Name="BtnModifyCreditScore" Grid.Column="0" Grid.Row="2" Width="403" Content="_Modify Credit Score" Click="BtnModifyCreditScore_Click" IsEnabled="False" Margin="0,0,10,0" />
-        <Button x:Name="BtnBack" Grid.Column="1" Grid.Row="2" Width="403" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
+        <Button x:Name="BtnAddCreditScore" Grid.Column="0" Grid.Row="1" Width="518" Content="_Add Credit Score" Click="BtnAddCreditScore_Click" IsDefault="True" Margin="0,0,10,10" />
+        <Button x:Name="BtnDeleteCreditScore" Grid.Column="1" Grid.Row="1" Width="518" Content="_Delete Credit Score" Click="BtnDeleteCreditScore_Click" IsEnabled="False" Margin="0,0,0,10" />
+        <Button x:Name="BtnModifyCreditScore" Grid.Column="0" Grid.Row="2" Width="518" Content="_Modify Credit Score" Click="BtnModifyCreditScore_Click" IsEnabled="False" Margin="0,0,10,0" />
+        <Button x:Name="BtnBack" Grid.Column="1" Grid.Row="2" Width="518" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
     </Grid>
 </Page>
