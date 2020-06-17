@@ -1,4 +1,6 @@
-﻿namespace PFSoftware.Finances.Models.Sorting
+﻿using PFSoftware.Extensions;
+
+namespace PFSoftware.Finances.Models.Sorting
 {
     /// <summary>Represents a collection of expenses sorted by category.</summary>
     internal class CategorizedExpense : BaseINPC

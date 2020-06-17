@@ -1,4 +1,5 @@
-﻿using PFSoftware.Finances.Models.Data;
+﻿using PFSoftware.Extensions;
+using PFSoftware.Finances.Models.Data;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

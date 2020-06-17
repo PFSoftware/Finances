@@ -1,4 +1,5 @@
-﻿using PFSoftware.Finances.Models.Enums;
+﻿using PFSoftware.Extensions;
+using PFSoftware.Finances.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

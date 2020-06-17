@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFSoftware.Extensions;
+using System;
 
 namespace PFSoftware.Finances.Models.Data
 {

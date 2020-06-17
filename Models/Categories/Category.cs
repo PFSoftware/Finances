@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PFSoftware.Extensions;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PFSoftware.Finances.Models.Categories
