@@ -1,3 +1,3 @@
-# PFSoftware.FuelTracker
+# PFSoftware.Finances
 
-## An application designed to track fuel-ups for an individual's vehicles.
+## An application allows an individual to keep track of their finances and credit scores.
